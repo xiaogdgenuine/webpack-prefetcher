@@ -1,0 +1,17 @@
+{
+  "name": "webpack-prefetcher",
+  "version": "1.0.0",
+  "description": "A babel plugin to let u take over prefetch control from webpack",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "author": "Huikai <xiaogdgenuine@gmail.com>",
+  "scripts": {
+    "build": "node_modules/.bin/tsc"
+  },
+  "dependencies": {
+    "babel-types": "^6.26.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
