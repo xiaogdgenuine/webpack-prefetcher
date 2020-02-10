@@ -1,0 +1,6 @@
+{
+    "presets": ["env", "react", "stage-0"],
+    "plugins": [
+        "webpack-prefetcher/lib/babel-plugin"
+    ]
+}

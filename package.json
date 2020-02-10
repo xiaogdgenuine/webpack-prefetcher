@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "typescript": "^3.7.5"
-  }
+  },
+  "files": [
+    "./lib/**",
+    "./dist/**"
+  ]
 }
