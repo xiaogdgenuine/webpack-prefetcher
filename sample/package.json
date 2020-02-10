@@ -17,7 +17,7 @@
     "test:coverage": "jest --coverage"
   },
   "dependencies": {
-    "webpack-preftcher": "^1.0.0",
+    "webpack-prefetcher": "^1.0.0",
     "babel-types": "^6.26.0",
     "http-server": "^0.12.1",
     "prop-types": "^15.6.2",
@@ -50,7 +50,7 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.16.0",
     "webpack-assets-manifest": "^3.1.1",
-    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-bundle-analyzer": ">3.3.2",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
     "webpack-manifest-plugin": "^2.2.0",

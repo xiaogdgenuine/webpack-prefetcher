@@ -21,5 +21,6 @@
   "files": [
     "./lib/**",
     "./dist/**"
-  ]
+  ],
+  "homepage": "https://github.com/xiaogdgenuine/webpack-prefetcher"
 }
