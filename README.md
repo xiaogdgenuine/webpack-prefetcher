@@ -85,7 +85,7 @@ U have to write ur own webpack plugin to do so, the `ManifestPlugin` I created w
 ```
 compiler.hooks.webpackManifestPluginAfterEmit.tap('ManifestInlinePlugin', (manifest, outputPath) => {
   // outputPath is where the manifest file go.
-  // U can check my sample repo for how to implement the below function
+  // U can check "sample/src/manifest.inline.js" for how to implement the below function
   replaceManifestPathInHTML(outputPath)
 });
 ```

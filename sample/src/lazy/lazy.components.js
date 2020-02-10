@@ -13,6 +13,5 @@ function createLoadable(prefetchable) {
   }
 }
 
-
 export const lazyJS = createLoadable(prefetchable(() => import('./lazy')));
 export const lazyCSS = createLoadable(prefetchable(() => import('./lazy.style.css')));
