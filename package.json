@@ -9,6 +9,10 @@
     "build": "node_modules/.bin/tsc"
   },
   "dependencies": {
+    "fs-extra": "^7.0.0",
+    "lodash": ">=3.5 <5",
+    "object.entries": "^1.1.0",
+    "tapable": "^1.0.0",
     "babel-types": "^6.26.0"
   },
   "devDependencies": {
