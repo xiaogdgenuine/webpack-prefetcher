@@ -1,6 +1,40 @@
 # webpack-prefetcher
 A babel plugin to let u take over prefetch control from webpack
 
+## Purpose of this plugin
+Webpack is awesome for splitting chunks, but it's chunk prefetch/preload strategy is not ideal, if ur chunk load other chunk in some conditions like this:
+
+```
+function renderSearch() {
+    if (isMobile) {
+      // Tiny, 4KB, fast rendering
+      import('./mobile.search.js').then(render)
+    } else {
+      // Huge, 40KB, slow rendering
+      import('./desktop.search.js').then(render)
+    }
+}
+showSearchBtn.onclick = () => renderSearch()
+``` 
+
+Now u want to prefetch search chunks when user hover the button, u may do this:
+```
+showSearchBtn.onmouseover = () => {
+    if (isMobile) {
+      // Tiny, 4KB, fast rendering
+      import(/* webpackPrefetch: true */ './mobile.search.js')
+    } else {
+      // Huge, 40KB, slow rendering
+      import(/* webpackPrefetch: true */ './desktop.search.js')
+    }
+}
+```
+
+But this won't works, it will prefetch both desktop & mobile search chunks at same time, u actually don't have the control of this...
+
+See the issue here:
+https://github.com/webpack/webpack/issues/8470 
+
 ## Usage
 
 First:
