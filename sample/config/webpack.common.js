@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const WebpackManifestPlugin = require('webpack-prefetcher/lib/webpack-manifest-plugin');
-const ManifestInlinePlugin = require('../src/manifest.inline');
+const ManifestInlinePlugin = require('../src/manifest.inline.plugin');
 // const WebpackManifestAPIExposePlugin = require('webpack-prefetcher/lib/webpack-manifest-api-expose-plugin');
 
 module.exports = {
@@ -10,6 +10,7 @@ module.exports = {
   },
   output: {
     filename: '[name].[hash].js',
+    chunkFilename: '[name]-[chunkhash].js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: "/"
   },

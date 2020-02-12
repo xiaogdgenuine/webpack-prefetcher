@@ -11,7 +11,7 @@
     "start:reload": "webpack-dev-server --config=config/webpack.dev.js",
     "start:style": "cross-env MAP_STYLE=true webpack-dev-server --config=config/webpack.dev.js --hot",
     "build": "webpack --config=config/webpack.prod.js",
-    "run": "http-server ./dist",
+    "serve": "http-server ./dist",
     "analyze": "cross-env ENABLE_ANALYZER=true yarn build",
     "test": "jest",
     "test:coverage": "jest --coverage"

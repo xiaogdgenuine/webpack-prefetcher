@@ -7,7 +7,8 @@ import App from "./components/App";
 Prefetcher.loadManifest(fetch(window.manifestPath)
   .then(res => res.json()));
 
-// Method 2: Expose webpack manifest api and pass it here
+// Method 2: Expose webpack manifest apis and pass it here
+// Can use my WebpackManifestAPIExposePlugin to expose the apis
 // Prefetcher.loadManifestFromWebPack({
 //   jsSrc: window.jsonpScriptSrc,
 //   cssSrc: window.cssSrc

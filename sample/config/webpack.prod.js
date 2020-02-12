@@ -30,9 +30,12 @@ module.exports = merge(common, {
         ]
     },
     optimization: {
+        // namedChunks have to enable for if u want to use method 2
+        // Otherwise webpack will generate number id for chunks,
+        // the babel plugin wound't be able to get that number id.
         namedChunks: true,
-        moduleIds: 'named',
-        minimize: false,
+        // moduleIds: 'named',
+        // minimize: false,
         splitChunks: {
             chunks: 'all',
         },
@@ -47,7 +50,7 @@ module.exports = merge(common, {
         new OptimizeCssAssetsPlugin(),
         new MiniCssExtractPlugin({
             filename: "[name].[hash:8].css",
-            chunkFilename: "[id].[hash:8].css"
+            chunkFilename: "[id].[chunkhash:8].css"
         }),
         new BundleAnalyzerPlugin({
             analyzerMode: enableBundleAnalyzer === true ? 'static' : 'disabled',
