@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const ManifestPlugin = require('webpack-prefetcher/lib/manifest-plugin');
+const WebpackManifestPlugin = require('webpack-prefetcher/lib/webpack-manifest-plugin');
 const ManifestInlinePlugin = require('../src/manifest.inline');
+// const WebpackManifestAPIExposePlugin = require('webpack-prefetcher/lib/webpack-manifest-api-expose-plugin');
 
 module.exports = {
   entry: {
@@ -29,11 +30,7 @@ module.exports = {
         test: /.*\.(gif|png|jp(e*)g|svg)$/i,
         use: [
           {
-            loader: "url-loader",
-            options: {
-              limit: 21000,
-              name: "images/[name]_[hash:7].[ext]"
-            }
+            loader: "file-loader",
           }
         ]
       },
@@ -53,10 +50,18 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, '../public', 'index.html')
     }),
-    new ManifestPlugin({
+    // Generate manifest.[hash].json
+    new WebpackManifestPlugin({
       filter: file => !file.path.endsWith('.map')
     }),
-    new ManifestInlinePlugin()
+    // Put manifest.[hash].json path into index.html
+    new ManifestInlinePlugin(),
+
+    // Expose webpack manifest api
+    // new WebpackManifestAPIExposePlugin({
+    //   jsSrc: 'jsonpScriptSrc',
+    //   cssSrc: 'cssSrc'
+    // })
   ],
   resolve: {
     extensions: ['.js', '.jsx']
