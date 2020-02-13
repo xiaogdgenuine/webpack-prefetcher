@@ -224,7 +224,12 @@ Remember to put it before `webpack-prefetcher/lib/babel-plugin` in .babelrc
 ]
 ```
 
+## Known issues
+If the chunk name of a lazy load module is not set by `/* webpackChunkName: name */` comment, for example it's set by 
 
+`webpack > optimization > splitChunks > chunkGroup > name function`
+
+then the plugin can't get the correct chunk name from it, thus can't prefetch the correct resources.
 
 ## Exactly, how this plugin works?
 [Prefetch - Take control from webpack](https://medium.com/@migcoder/prefetch-preload-take-control-from-webpack-26d1e0f2c3)

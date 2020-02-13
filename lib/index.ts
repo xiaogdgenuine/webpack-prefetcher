@@ -28,6 +28,7 @@ let typeMapping: { [p in string]: string } = {
   "svg": 'image',
   "webp": 'image',
   "mp4": 'video',
+  "webm": 'video',
   "mp3": 'audio',
   "ogg": 'audio',
 }
