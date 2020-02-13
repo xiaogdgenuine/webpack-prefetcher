@@ -1,6 +1,6 @@
 {
   "name": "webpack-prefetcher",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A babel plugin to let u take over prefetch control from webpack",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -22,5 +22,11 @@
     "lib/**",
     "dist/**"
   ],
-  "homepage": "https://github.com/xiaogdgenuine/webpack-prefetcher"
+  "homepage": "https://github.com/xiaogdgenuine/webpack-prefetcher",
+  "keywords": [
+    "webpack plugin",
+    "babel plugin",
+    "prefetch",
+    "preload"
+  ]
 }
